@@ -1,6 +1,6 @@
 const { MongoClient } = require('mongodb');
 
-const MONGO_DB_URL = 'mongodb://localhost:27017/BreakingBad';
+const MONGO_DB_URL = 'mongodb+srv://thebruny:1202@breaking-bad.rbc49.mongodb.net/breaking-bad?retryWrites=true&w=majority';
 const DB_NAME = 'BreakingBad';
 
 const Connect = () => 
