@@ -12,4 +12,4 @@ app.use(express.json());
 
 app.use(characterRoute);
 
-app.listen(processs.env.PORT || PORT, () => console.log(`API rodando`));
+app.listen(process.env.PORT || PORT, () => console.log(`API rodando`));
