@@ -1,3 +1,5 @@
+const getEpisodes = require('../helpers/api');
+
 const { getAllService,
   addCharacterService, 
   updateCharacterNameService,
@@ -16,7 +18,8 @@ const getAll = async (req, res) => {
 const addCharacter = async (req, res) => {
   try {
     const { name } = req.body;
-    const addCharName = await addCharacterService(name);
+    const episodes = await getEpisodes(name);
+    await addCharacterService(name, episodes);
     res.status(201).json(`Personagem cadastrado!`);
   } catch (error) {
     res.status(400).json(error.message);

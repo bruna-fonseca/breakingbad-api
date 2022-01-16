@@ -11,13 +11,13 @@ const getAllService = async () => {
   return chars;
 };
 
-const addCharacterService = async (name) => {
+const addCharacterService = async (name, episodes) => {
   if (!name || name === '') throw new Error('precisa ser um nome válido');
 
   const findChar = await findCharacterModel(name);
-  if (findChar) throw new Error('personagem já cadastrado! Tente adicionar um novo.')
+  if (findChar) throw new Error('personagem já cadastrado! Tente adicionar um novo.');
 
-  const createChar = await addCharacterModel(name);
+  const createChar = await addCharacterModel(name, episodes);
   return createChar;
 };
 

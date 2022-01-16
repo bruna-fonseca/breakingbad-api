@@ -9,8 +9,8 @@ const findCharacterModel = async (name) =>
   connect().then((db) => db.collection('characters').findOne({ name }))
     .catch((error) => error.message);
 
-const addCharacterModel = async (name) => {
-  connect().then((db) => db.collection('characters').insertOne({ name }))
+const addCharacterModel = async (name, episodes) => {
+  connect().then((db) => db.collection('characters').insertOne({ name, episodes }))
     .then((response) => response.ops[0])
     .catch((error) => error.message);
 };

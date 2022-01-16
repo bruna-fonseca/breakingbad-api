@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.route('/')
   .get(getAll)
-  .post(addCharacter)
+  .post(addCharacter);
 
 router.route('/:id')
   .put(updateCharacterName)
