@@ -5,11 +5,11 @@ require('dotenv').config();
 const characterRoute = require('./routes/characterRoute');
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
 
 app.use(characterRoute);
 
-app.listen(process.env.PORT || PORT, () => console.log(`API rodando`));
+app.listen(PORT, () => console.log(`API rodando na porta ${PORT}!`));
