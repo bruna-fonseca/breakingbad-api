@@ -1,3 +1,4 @@
+const { StatusCodes } = require('http-status-codes');
 const getEpisodes = require('../helpers/api');
 
 const { getAllService,
@@ -6,12 +7,12 @@ const { getAllService,
   deleteCharacterService,
 } = require('../services/characterService');
 
-const getAll = async (req, res) => {
+const getAll = async (_req, res) => {
   try {
     const getAllChars = await getAllService();
-    res.status(200).json(getAllChars);
+    res.status(StatusCodes.OK).json(getAllChars);
   } catch (error) {
-    res.status(400).json(error.message);
+    res.status(StatusCodes.NOT_FOUND).json(error.message);
   }
 };
 
@@ -20,9 +21,9 @@ const addCharacter = async (req, res) => {
     const { name } = req.body;
     const episodes = await getEpisodes(name);
     await addCharacterService(name, episodes);
-    res.status(201).json(`Personagem cadastrado!`);
+    res.status(StatusCodes.CREATED).json(`Personagem cadastrado!`);
   } catch (error) {
-    res.status(400).json(error.message);
+    res.status(StatusCode.BAD_REQUEST).json(error.message);
   }
 };
 
@@ -31,19 +32,19 @@ const updateCharacterName = async (req, res) => {
     const { name } = req.body;
     const { id } = req.params;
     const updateName = updateCharacterNameService(name, id);
-    res.status(200).json(updateName);
+    res.status(StatusCodes.OK).json('Nome do personagem editado com sucesso!');
   } catch (error) {
-    res.status(400).json(error.message);
+    res.status(StatusCodes.BAD_REQUEST).json(error.message);
   }
 };
 
 const deleteCharacter = async (req, res) => {
   try {
     const { id } = req.params;
-    const deleteCharacter = deleteCharacterService(id);
-    res.status(200).json('Personagem deletado com sucesso!');
+    await deleteCharacterService(id);
+    res.status(StatusCodes.NO_CONTENT).json('Personagem deletado com sucesso!');
   } catch (error) {
-    res.status(400).json(error.message);
+    res.status(StatusCodes.BAD_REQUEST).json(error.message);
   }
 };
 
