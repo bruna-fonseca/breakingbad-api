@@ -30,3 +30,8 @@ $ npm start ou npm run dev
 ```
 ## Deployment
 
+A forma mais simples de realizar uma deploy gratuito é com o [Heroku](https://www.heroku.com/).
+
+Para fazer o deploy do projeto no site, basta clicar no botão "create new app" na página, após a realização do login, e seguir as orientação que o próprio Heroku possui.
+
+O projeto já está hospedado e você pode acessá-lo [aqui](https://breaking-bad-api.herokuapp.com/).
