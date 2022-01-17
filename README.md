@@ -17,7 +17,7 @@ Http-status-codes | biblioteca que enumera os códigos de status HTTP
 ```bash
 
 # Clone o projeto no seu computador:
-$ git clone https://github.com/bruna-fonseca/breakingbad-desafio.git
+$ git clone https://github.com/bruna-fonseca/breakingbad-api.git
 
 # Vá para pasta do projeto
 $ cd breakingbad-desafio
