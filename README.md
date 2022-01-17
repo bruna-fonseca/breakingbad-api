@@ -20,7 +20,7 @@ Http-status-codes | biblioteca que enumera os códigos de status HTTP
 $ git clone https://github.com/bruna-fonseca/breakingbad-api.git
 
 # Vá para pasta do projeto
-$ cd breakingbad-desafio
+$ cd breakingbad-api
 
 # Instale as dependências
 $ npm install
