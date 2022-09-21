@@ -4,6 +4,7 @@ require('dotenv').config();
 
 const characterRoute = require('./routes/characterRoute');
 
+// teste
 const app = express();
 const PORT = process.env.PORT || 3001;
 
